@@ -10,15 +10,62 @@
       rel="stylesheet"
     />
     <!-- Goggle Fonts : End -->
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="./src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>
+      African Proverbs - Brings you well-curated and unique proverbs unique to
+      different regions in Africa
+    </title>
+    <meta
+      name="description"
+      content="The African Proverb API brings you well-curated and unique proverbs unique to different regions in Africa. Not only does the API offers you proverbs in the English language, but it also provides its response in multi-African languages and interpretation."
+    />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta
+      name="keywords"
+      content="adages, proverbs, african, african heritage, african proverbs, nigeria, african languates"
+    />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="African Proverbs - Well-curated and unique proverbs API unique to different regions in Africa in multiple native dialects"
+    />
+    <meta
+      property="og:description"
+      content="The African Proverb API brings you well-curated and unique proverbs unique to different regions in Africa. Not only does the API offers you proverbs in the English language, but it also provides its response in multi-African languages and interpretation."
+    />
+    <meta property="og:image" content="/assets/african-proverbs-social.jpg" />
+    <!-- Twitter card -->
+    <meta
+      name="twitter:title"
+      content="African Proverbs - Well-curated and unique proverbs API unique to different regions in Africa in multiple native dialects"
+    />
+    <meta name="twitter:image" content="/assets/african-proverbs-social.jpg" />
+    <meta name="twitter:creator" content="@trictthevick" />
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body class="min-h-screen bg-stone-900 text-white relative overflow-x-hidden">
     <header class="sticky top-0 bg-stone-900/50 h-16 w-full backdrop-blur-sm">
       <div
-        class="p-2 max-w-7xl mx-auto h-full flex items-center justify-between items-center"
+        class="p-2 max-w-7xl mx-auto h-full flex justify-between items-center"
       >
         <a href="/">
           <h1 class="text-[1.1rem] font-bold">
@@ -32,11 +79,10 @@
             <li class="hover:text-lime-400">
               <a href="/aboutme/">About Me</a>
             </li>
-            <li class="hover:text-lime-400"><a href="">Guide</a></li>
           </ul>
           <ul class="hidden md:flex items-center gap-3 pl-3">
             <li class="cursor-pointer lg:opacity-80 lg:hover:opacity-100">
-              <a href="">
+              <a href="https://twitter.com/trickthevick" target="_blank">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -49,7 +95,7 @@
               </a>
             </li>
             <li class="cursor-pointer lg:opacity-80 lg:hover:opacity-100">
-              <a href="https://www.youtube.com/@trickthevick"
+              <a href="https://www.youtube.com/@trickthevick" target="_blank"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="w-6 h-6 fill-gray-100"
@@ -64,7 +110,10 @@
               class="cursor-pointer lg:opacity-80 lg:hover:opacity-100"
               title="Source"
             >
-              <a href="https://github.com/elvis-ndubuisi/african-proverbs">
+              <a
+                href="https://github.com/elvis-ndubuisi/african-proverbs"
+                target="_blank"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -105,10 +154,11 @@
           <h1
             class="font-bold text-4xl capitalize text-center mb-3 lg:text-left"
           >
-            the head Is Mighter Than the Sword
+            the eyes of the in-law belittle what they have seen
           </h1>
           <p class="px-3">
-            The African Proverb API brings you well-curated and unique proverbs
+            <span class="font-bold uppercase mr-2">teso: </span>
+            Akongu ka mulamwa edisaka kama ka yeini ite.
           </p>
           <div class="w-full p-3 flex flex-wrap items-center px-4 gap-4">
             <a
@@ -119,12 +169,14 @@
             <a
               class="py-2 px-3 rounded-lg text-center bg-stone-700/80 opacity-80 hover:opacity-100 text-sm flex items-center gap-2 font-medium"
               href="/contribute/"
+              title="submit a proverb"
               >Submit Proverb</a
             >
             <a
               class="py-2 px-3 rounded-lg text-center bg-stone-700/80 opacity-80 hover:opacity-100 text-sm flex items-center gap-2 font-medium"
-              href="Share on Twitter"
+              href="https://twitter.com/intent/tweet?text=Check out this API"
               title="Share on Twitter"
+              target="_blank"
               >Tweet <span>&#128591;</span></a
             >
           </div>
@@ -167,11 +219,8 @@
           API Endpoints
         </h2>
 
-        <section class="max-w-4xl mx-auto flex flex-col gap-3 mb-4">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas eos,
-            explicabo nulla perspiciatis quisquam incidunt!
-          </p>
+        <section class="max-w-4xl mx-auto flex flex-col gap-2 mb-6">
+          <p>Get a random proverb object</p>
           <div
             class="bg-black/60 p-3 rounded text-sm flex space-x-2 items-center justify-between"
           >
@@ -184,9 +233,87 @@
               <span>$</span>
               <span>engpoint link</span>
             </span>
-            <div>
-              <span class="font-medium text-sm text-lime-400">copied</span>
-              <span class="inline-block">cp</span>
+            <div class="flex items-center gap-1">
+              <span class="font-medium text-sm text-white">copied</span>
+              <span class="inline-block px-2 cursor-pointer hover:opacity-80">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="fill-lime-500 w-6 h-6"
+                >
+                  <path
+                    d="M19 3h-2.25a1 1 0 0 0-1-1h-7.5a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 17H5V5h2v2h10V5h2v15z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="bg-black/60 px-2 rounded text-[0.95rem]">
+            <pre><code class="language-javascript">import hellor from './sdflkjoo'</code></pre>
+          </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto flex flex-col gap-2 mb-6">
+          <p>Get a random proverb object filtered by language or/and country</p>
+          <div
+            class="bg-black/60 p-3 rounded text-sm flex space-x-2 items-center justify-between"
+          >
+            <div
+              class="bg-white py-1 px-2 rounded text-black font-semibold uppercase"
+            >
+              POST
+            </div>
+            <span class="grow inline-flex items-center space-x-2 text-lime-300">
+              <span>$</span>
+              <span>engpoint link</span>
+            </span>
+            <div class="flex items-center gap-1">
+              <span class="font-medium text-sm text-white">copied</span>
+              <span class="inline-block px-2 cursor-pointer hover:opacity-80">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="fill-lime-500 w-6 h-6"
+                >
+                  <path
+                    d="M19 3h-2.25a1 1 0 0 0-1-1h-7.5a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 17H5V5h2v2h10V5h2v15z"
+                  ></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="bg-black/60 px-2 rounded text-[0.95rem]">
+            <pre><code class="language-javascript">import hellor from './sdflkjoo'</code></pre>
+          </div>
+        </section>
+
+        <section class="max-w-4xl mx-auto flex flex-col gap-2 mb-6">
+          <p>Get a cached adage object - this only changes every 24hrs</p>
+          <div
+            class="bg-black/60 p-3 rounded text-sm flex space-x-2 items-center justify-between"
+          >
+            <div
+              class="bg-white py-1 px-2 rounded text-black font-semibold uppercase"
+            >
+              GET
+            </div>
+            <span class="grow inline-flex items-center space-x-2 text-lime-300">
+              <span>$</span>
+              <span>engpoint link</span>
+            </span>
+            <div class="flex items-center gap-1">
+              <span class="font-medium text-sm text-white">copied</span>
+              <span class="inline-block px-2 cursor-pointer hover:opacity-80">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="fill-lime-500 w-6 h-6"
+                >
+                  <path
+                    d="M19 3h-2.25a1 1 0 0 0-1-1h-7.5a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 17H5V5h2v2h10V5h2v15z"
+                  ></path>
+                </svg>
+              </span>
             </div>
           </div>
           <div class="bg-black/60 px-2 rounded text-[0.95rem]">
@@ -250,7 +377,9 @@
 
     <footer>
       <div class="max-w-5xl mx-auto p-4 my-3">
-        <div class="flex items-center justify-center gap-2 text-gray-400">
+        <div
+          class="flex items-center justify-center flex-wrap gap-2 text-gray-400"
+        >
           <div>&copy; 2023 |</div>
           Made with
           <svg
@@ -311,6 +440,6 @@
 
     <!-- <div id="app"></div> -->
     <!-- <script type="module" src="/src/main.ts"></script> -->
-    <script src="./src/prism.js"></script>
+    <script src="./src/prism.js" type="module"></script>
   </body>
 </html>

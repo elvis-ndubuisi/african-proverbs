@@ -6,9 +6,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        contribute: resolve(__dirname, "./contribute/index.html"),
-        aboutme: resolve(__dirname, "./aboutme/index.html"),
-        playground: resolve(__dirname, "./playground/index.html"),
+        contribute: resolve(__dirname, "contribute/index.html"),
+        aboutme: resolve(__dirname, "aboutme/index.html"),
+        playground: resolve(__dirname, "playground/index.html"),
       },
     },
   },

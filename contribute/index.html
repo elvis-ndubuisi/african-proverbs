@@ -12,10 +12,10 @@
     <!-- Goggle Fonts : End -->
     <link rel="stylesheet" href="../src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>API Playground - African Proverbs</title>
+    <title>Contribute | Submit Proverb - African Proverbs</title>
     <meta
       name="description"
-      content="Excecute the African Proverbs API endpoints in an interactive environment."
+      content="Add proverbs to the African Proverbs API codebase. All submitted proverbs will be reviewed before it will be avaliable to the public"
     />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta
@@ -23,14 +23,20 @@
       content="adages, proverbs, african, african heritage, african proverbs, nigeria, african languates"
     />
     <!-- Open Graph -->
-    <meta property="og:title" content="API Playground - African Proverbs" />
+    <meta
+      property="og:title"
+      content="Contribute | Submit Proverb - African Proverbs"
+    />
     <meta
       property="og:description"
-      content="Excecute the African Proverbs API endpoints in an interactive environment."
+      content="Contribute to the African Proverbs API by submitting proverbs to the public."
     />
     <meta property="og:image" content="/assets/african-proverbs-social.jpg" />
     <!-- Twitter card -->
-    <meta name="twitter:title" content="API Playground - African Proverbs" />
+    <meta
+      name="twitter:title"
+      content="Contribute | Submit Proverb - African Proverbs"
+    />
     <meta name="twitter:image" content="/assets/african-proverbs-social.jpg" />
     <meta name="twitter:creator" content="@trictthevick" />
     <!-- Favicon -->
@@ -123,77 +129,125 @@
       </div>
     </header>
 
-    <main>
-      <div class="h-[10rem] max-w-7xl mx-auto mb-4 rounded-lg overflow-hidden">
-        <img
-          src="/assets/ian-macharia-NRv8BsouFBQ-unsplash.png"
-          alt="african group"
-          class="h-full w-full object-cover object-top"
-        />
-      </div>
-      <h2 class="text-4xl text-center mb-4">API Playground</h2>
-      <div class="max-w-4xl mx-auto p-3 space-y-3">
-        <!-- Playground Header -->
-        <div class="flex items-center justify-between gap-3">
-          <div
-            class="py-2 px-4 rounded text-center bg-black/40 text-sm font-medium"
+    <main class="max-w-5xl mx-auto px-2">
+      <h2 class="capitalize text-4xl font-regular text-center">
+        African Proverbs you know
+      </h2>
+      <p class="text-center max-w-xl mx-auto leading-6 my-4">
+        The African Proverbs API(s) only holds a tiny fraction of African
+        proverbs with few in several native dialects. Help add 💪 to its
+        codebase
+      </p>
+      <form
+        class="min-h-[10rem] max-w-lg mx-auto bg-black/10 px-3 py-4 rounded flex flex-col gap-3 items-start"
+      >
+        <!-- Name field -->
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-lime-500 focus:outline-none focus:ring-0 focus:border-lime-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            for="name"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Your Name <span class="text-rose-500 font-bold">*</span></label
           >
-            GET
-          </div>
-
-          <div class="flex-1 inline-block relative">
-            <select
-              class="block appearance-none w-full bg-black/40 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
-            >
-              <option>
-                Really long option that will likely overlap the chevron
-              </option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-            </select>
-            <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-lime-500"
-            >
-              <svg
-                class="fill-current h-5 w-5"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                />
-              </svg>
-            </div>
-          </div>
-
-          <button
-            class="py-2 px-3 rounded text-center uppercase bg-black/40 text-sm font-medium hover:opacity-80 hover:ring hover:ring-lime-500"
-          >
-            Copy
-          </button>
         </div>
-        <!-- Playground Body -->
-        <section class="p-3 rounded min-h-[4rem] bg-black/40">
-          <pre><code class="language-json">import hellor from './sdflkjoo'</code></pre>
-        </section>
-        <!-- Playground Send Button -->
-        <button
-          class="w-14 h-14 grid items-center justify-center border-2 border-white rounded-full bg-gray-50 opacity-80 hover:opacity-100 mx-auto"
-          title="Test API endpoint"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="w-11 h-11 fill-black ml-1"
+
+        <!-- Proverb text -->
+        <div class="w-full">
+          <label
+            for="message"
+            class="block mb-2 text-sm font-medium text-gray-400"
+            >Proverb <span class="font-bold text-rose-500">*</span></label
           >
-            <path d="M7 6v12l10-6z"></path>
-          </svg>
-        </button>
-        <!-- Playground Response -->
-        <section class="p-3 rounded min-h-[8rem] bg-black/40">
-          <pre><code class="language-json">import hellor from './sdflkjoo'</code></pre>
-        </section>
-      </div>
+          <textarea
+            id="proverb"
+            rows="4"
+            class="block p-2.5 w-full text-white bg-black/10 rounded-lg border border-gray-300 focus:ring-lime-500 focus:border-lime-500"
+            placeholder="Type proverbs..."
+            required
+          ></textarea>
+        </div>
+        <!-- Country & Twitter Handle -->
+        <div
+          class="w-full flex flex-col md:flex-row md:items-center md:justify-between gap-2"
+        >
+          <div class="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="country"
+              id="country"
+              class="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-lime-500 focus:outline-none focus:ring-0 focus:border-lime-600 peer"
+              placeholder=" "
+              required
+            />
+            <label
+              for="country"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Country <span class="text-rose-500 font-bold">*</span></label
+            >
+          </div>
+
+          <div class="relative z-0 w-full mb-6 group">
+            <input
+              type="text"
+              name="twiterhandle"
+              id="twitterhandle"
+              class="block py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-lime-500 focus:outline-none focus:ring-0 focus:border-lime-600 peer"
+              placeholder=" "
+            />
+            <label
+              for="twitterhandle"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-lime-600 peer-focus:dark:text-lime-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Twitter Handle</label
+            >
+          </div>
+        </div>
+
+        <!-- Submit and Acknowledgement -->
+        <div class="w-full flex items-center justify-between">
+          <button
+            type="submit"
+            class="text-white bg-lime-600 hover:bg-lime-500 focus:ring-2 focus:outline-none focus:ring-white font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 inline-flex items-center"
+          >
+            <svg
+              aria-hidden="true"
+              role="status"
+              class="inline w-4 h-4 mr-3 text-white animate-spin"
+              viewBox="0 0 100 101"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                fill="#E5E7EB"
+              />
+              <path
+                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                fill="currentColor"
+              />
+            </svg>
+            Contribute
+          </button>
+
+          <div class="flex items-center">
+            <input
+              id="publish"
+              type="checkbox"
+              checked
+              class="w-4 h-4 text-lime-500 bg-white border-gray-300 rounded focus:ring-lime-500"
+            />
+            <label for="publish" class="ml-2 text-sm text-white"
+              >Publish your contribution on twitter.
+            </label>
+          </div>
+        </div>
+      </form>
     </main>
 
     <section class="bg-stone-500/10 px-3 py-6 my-6 min-h-16">
@@ -283,7 +337,5 @@
 
     <!-- <div id="app"></div> -->
     <!-- <script type="module" src="/src/main.ts"></script> -->
-    <script src="../playground/playground.ts" type="module"></script>
-    <script src="../src/prism.js" type="module"></script>
   </body>
 </html>
