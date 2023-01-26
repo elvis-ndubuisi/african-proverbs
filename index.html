@@ -224,7 +224,7 @@
         </p>
       </div>
 
-      <div class="max-w-7xl mx-auto p-2">
+      <div class="max-w-7xl mx-auto p-2" id="rest-endpoints">
         <h2 class="font-semibold text-[1.2rem] leading-none my-4">
           <span
             class="inline-block mr-3 font-bold p-2 rounded bg-lime-400 text-black"
@@ -237,6 +237,7 @@
           <p>Get a random proverb object</p>
           <div
             class="bg-black/60 p-3 rounded text-sm flex space-x-2 items-center justify-between"
+            id="api-header"
           >
             <div
               class="bg-white py-1 px-2 rounded text-black font-semibold uppercase"
@@ -248,12 +249,15 @@
               <span>engpoint link</span>
             </span>
             <div class="flex items-center gap-1">
-              <span class="font-medium text-sm text-white">copied</span>
+              <span class="font-medium text-sm text-white capitalize hidden"
+                >copied</span
+              >
               <span class="inline-block px-2 cursor-pointer hover:opacity-80">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   class="fill-lime-500 w-6 h-6"
+                  id="api-clipboard"
                 >
                   <path
                     d="M19 3h-2.25a1 1 0 0 0-1-1h-7.5a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 17H5V5h2v2h10V5h2v15z"
@@ -271,6 +275,7 @@
           <p>Get a random proverb object filtered by language or/and country</p>
           <div
             class="bg-black/60 p-3 rounded text-sm flex space-x-2 items-center justify-between"
+            id="api-header"
           >
             <div
               class="bg-white py-1 px-2 rounded text-black font-semibold uppercase"
@@ -282,12 +287,15 @@
               <span>engpoint link</span>
             </span>
             <div class="flex items-center gap-1">
-              <span class="font-medium text-sm text-white">copied</span>
+              <span class="font-medium text-sm text-white capitalize hidden"
+                >copied</span
+              >
               <span class="inline-block px-2 cursor-pointer hover:opacity-80">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   class="fill-lime-500 w-6 h-6"
+                  id="api-clipboard"
                 >
                   <path
                     d="M19 3h-2.25a1 1 0 0 0-1-1h-7.5a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 17H5V5h2v2h10V5h2v15z"
@@ -305,6 +313,7 @@
           <p>Get a cached adage object - this only changes every 24hrs</p>
           <div
             class="bg-black/60 p-3 rounded text-sm flex space-x-2 items-center justify-between"
+            id="api-header"
           >
             <div
               class="bg-white py-1 px-2 rounded text-black font-semibold uppercase"
@@ -316,12 +325,15 @@
               <span>engpoint link</span>
             </span>
             <div class="flex items-center gap-1">
-              <span class="font-medium text-sm text-white">copied</span>
+              <span class="font-medium text-sm text-white capitalize hidden"
+                >copied</span
+              >
               <span class="inline-block px-2 cursor-pointer hover:opacity-80">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   class="fill-lime-500 w-6 h-6"
+                  id="api-clipboard"
                 >
                   <path
                     d="M19 3h-2.25a1 1 0 0 0-1-1h-7.5a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 17H5V5h2v2h10V5h2v15z"
@@ -348,6 +360,7 @@
         <section class="max-w-4xl mx-auto flex flex-col gap-3">
           <div
             class="bg-black/60 p-3 rounded text-sm flex space-x-2 items-center justify-between"
+            id="api-header"
           >
             <div
               class="bg-white py-1 px-2 rounded text-black font-semibold uppercase"
@@ -358,9 +371,22 @@
               <span>$</span>
               <span>engpoint link</span>
             </span>
-            <div class="flex space-x-2">
-              <span class="font-medium text-sm text-lime-400">copied</span>
-              <span class="inline-block">cp</span>
+            <div class="flex items-center gap-1">
+              <span class="font-medium text-sm text-white capitalize hidden"
+                >copied</span
+              >
+              <span class="inline-block px-2 cursor-pointer hover:opacity-80">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="fill-lime-500 w-6 h-6"
+                  id="api-clipboard"
+                >
+                  <path
+                    d="M19 3h-2.25a1 1 0 0 0-1-1h-7.5a1 1 0 0 0-1 1H5c-1.103 0-2 .897-2 2v15c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 17H5V5h2v2h10V5h2v15z"
+                  ></path>
+                </svg>
+              </span>
             </div>
           </div>
         </section>
@@ -457,6 +483,7 @@
       </div>
     </footer>
 
-    <script src="./src/prism.js" type="module"></script>
+    <script src="/src/main.ts" type="module"></script>
+    <script src="/src/prism.js" type="module"></script>
   </body>
 </html>
