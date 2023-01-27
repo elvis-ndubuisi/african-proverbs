@@ -71,7 +71,7 @@ addDialectButton?.addEventListener("click", function () {
 
 // DOM
 function createDialect(): HTMLElement {
-  let parent = buildDiv("w-full flex items-center gap-2 flex-wrap mb-3");
+  let parent = buildDiv("w-full flex items-center flex-wrap mb-3 gap-3");
   // Wrapper divs for lang and dialect input sections
   let langWrapper = buildDiv("relative z-0 group max-w-sm");
   let dialectWrapper = buildDiv("relative z-0 group flex-grow");
