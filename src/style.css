@@ -36,8 +36,8 @@ pre[class*="language-"] {
   hyphens: none;
 }
 pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
+  padding: 0.3em;
+  margin: 0.2em 0;
   overflow: auto;
   border-radius: 0.3em;
 }

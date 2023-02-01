@@ -1,11 +1,13 @@
 import copyToClipboard from "./utils/clipboard";
+import theme from "./theme";
+// Init
+theme();
 
-/* DOM Elements */
 const apiHeader = document.querySelectorAll("#api-header");
+
 /**
- * Listen for events and copy to clipboard
- * * ID : api-clipboard ==> clipboard svg icons
- * * ID : api-header ==> parent eleent
+ * Listen for events and copy to clipboard.
+ * A delay of 2 seconds is initiated before next clip event will occur
  */
 apiHeader.forEach((header) => {
   header.addEventListener("click", function (event: any) {
@@ -18,7 +20,7 @@ apiHeader.forEach((header) => {
       header.children[2].firstElementChild?.classList.remove("hidden");
       setTimeout(() => {
         header.children[2].firstElementChild?.classList.add("hidden");
-      }, 3000);
+      }, 2000);
     }
   });
 });

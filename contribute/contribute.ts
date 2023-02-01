@@ -1,5 +1,7 @@
 import data from "./data.json";
 import { buildDiv, buildInput, buildLabel } from "../src/utils/buildElements";
+import theme from "../src/theme";
+theme();
 
 const submitProverbButton = document.getElementById(
   "submit-proverb"
@@ -10,13 +12,15 @@ const contributeForm = document.getElementById(
 const addDialectButton = document.getElementById("add-dialect");
 const dialectsDom = document.getElementById("dialects-dom");
 
+var insertCount = 0;
+
 contributeForm?.addEventListener("submit", (event) => {
   event.preventDefault();
-  // Form state start
+  // Activate form state feedback
   submitProverbButton!.innerText = "Submitting.....";
   submitProverbButton.disabled = true;
   submitProverbButton.firstElementChild?.classList.replace("hidden", "inline");
-  // Build data
+  // Build data from input values
   let translations: object = {};
   let name = contributeForm.elements["name"].value;
   let proverb = contributeForm.elements["proverb"].value;
@@ -66,15 +70,21 @@ contributeForm?.addEventListener("submit", (event) => {
 });
 
 addDialectButton?.addEventListener("click", function () {
-  dialectsDom?.insertBefore(createDialect(), addDialectButton);
+  if (insertCount !== 5) {
+    dialectsDom?.insertBefore(createDialect(), addDialectButton);
+    insertCount++;
+  }
 });
 
-// DOM
+/**
+ * Creates Dialect input fields and styles.
+ * @returns HTMLElement
+ */
 function createDialect(): HTMLElement {
-  let parent = buildDiv("w-full flex items-center flex-wrap mb-3 gap-3");
+  let parent = buildDiv("flex items-center flex-wrap mb-3 gap-3 w-full");
   // Wrapper divs for lang and dialect input sections
   let langWrapper = buildDiv("relative z-0 group max-w-sm");
-  let dialectWrapper = buildDiv("relative z-0 group flex-grow");
+  let dialectWrapper = buildDiv("relative z-0 group flex-1");
 
   // Build inputs with its class and attributes
   let langInput = buildInput(
