@@ -20,6 +20,7 @@ let endpoint: string = "";
 let filterValue: string = "";
 
 window.addEventListener("DOMContentLoaded", () => {
+  // Load pre code.
   response!.innerHTML = `
           <pre><code class="language-json">{
   "status": "no request has been performed yet",
@@ -32,46 +33,61 @@ window.addEventListener("DOMContentLoaded", () => {
   endpoint = endpointOptions.value;
 });
 
-// Handle select toggling
+// Handle select options toggling
 endpointOptions?.addEventListener("change", (event) => {
   endpoint = endpointOptions.value;
   if (endpointOptions.value.includes("filter?filter")) {
-    requestMethod!.innerHTML = "Post".toUpperCase();
     filterField?.classList.replace("hidden", "block");
+    endpoint = endpoint + filterValue;
   } else {
     requestMethod!.innerText = "Get".toUpperCase();
     filterField?.classList.replace("block", "hidden");
+    endpoint = endpoint;
   }
 });
+
 // Handle play button
 play.addEventListener("click", async () => {
   play.classList.replace("grid", "hidden");
   document.getElementById("fetch-status")?.classList.remove("hidden");
-  await fetch(endpoint)
-    .then((response) => response.json())
-    .then((data) => {
-      response!.innerHTML = `
-          <pre><code class="language-json">{
-  "status": "no request has been performed yet",
-  "howto": "start by pressing the play button",
-  "view": "api response will display here"
-}</code></pre>
-  `;
-      play.classList.replace("hidden", "grid");
-      document.getElementById("fetch-status")?.classList.add("hidden");
-    })
-    .catch((err) => {
-      response!.innerHTML = `
-          <pre><code class="language-json">{
-  "status": "no request has been performed yet",
-  "howto": "start by pressing the play button",
-  "view": "api response will display here"
-}</code></pre>
-  `;
-      play.classList.replace("hidden", "grid");
-      document.getElementById("fetch-status")?.classList.add("hidden");
-    });
+  console.log(endpoint);
+  const [err, payload] = await usePlay(endpoint);
+  if (err) {
+    console.log("error");
+    console.log(err);
+  } else if (payload) {
+    console.log("payload");
+    console.log(payload);
+  }
+  play.classList.replace("hidden", "grid");
+  document.getElementById("fetch-status")?.classList.add("hidden");
+
+  //   await fetch(endpoint)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       response!.innerHTML = `
+  //           <pre><code class="language-json">{
+  //   "status": "no request has been performed yet",
+  //   "howto": "start by pressing the play button",
+  //   "view": "api response will display here"
+  // }</code></pre>
+  //   `;
+  //       play.classList.replace("hidden", "grid");
+  //       document.getElementById("fetch-status")?.classList.add("hidden");
+  //     })
+  //     .catch((err) => {
+  //       response!.innerHTML = `
+  //           <pre><code class="language-json">{
+  //   "status": "no request has been performed yet",
+  //   "howto": "start by pressing the play button",
+  //   "view": "api response will display here"
+  // }</code></pre>
+  //   `;
+  //       play.classList.replace("hidden", "grid");
+  //       document.getElementById("fetch-status")?.classList.add("hidden");
+  //     });
 });
+
 // Handle copy
 copy?.addEventListener("click", () => {
   clipboard(endpointOptions.value);
@@ -80,7 +96,37 @@ copy?.addEventListener("click", () => {
     copy!.innerText = "Copy";
   }, 1000);
 });
+
 // Handle filter value update
 filterField?.addEventListener("change", (event: any) => {
   filterValue = event.target?.value;
 });
+
+/**
+ * Returns tuple which indicates field or success payload.
+ * Error == undefined if no error occurs.
+ * Payload == undefined if error occurs.
+ * @param endpoint Request http endpoint
+ * @returns [error, payload].
+ */
+async function usePlay(
+  endpoint: string
+): Promise<[error: string | {} | undefined, payload: {} | undefined]> {
+  let error: any, payload: any;
+
+  try {
+    const rawResponse = await fetch(endpoint);
+    if (rawResponse.ok) {
+      error = undefined;
+      payload = await rawResponse.json();
+    } else {
+      error = await rawResponse.json();
+      payload = undefined;
+    }
+  } catch (err) {
+    error = err?.message;
+    payload = undefined;
+  }
+
+  return [error, payload];
+}
