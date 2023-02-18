@@ -101,6 +101,19 @@ contributeForm?.addEventListener("submit", async (event) => {
   };
 
   // Send to API
+  const [error, payload] = await useSubmitRequest(data);
+  if (error) {
+    console.log("Error");
+    console.log(error);
+  } else {
+    // display message.
+    console.log("payload");
+    console.log(payload);
+  }
+  // Deactivate form state feedback
+  submitProverbButton!.innerText = "Contribute";
+  submitProverbButton.disabled = false;
+  submitProverbButton.firstElementChild?.classList.replace("inline", "hidden");
 });
 
 addDialectButton?.addEventListener("click", function () {
@@ -153,4 +166,34 @@ function createDialect(): HTMLElement {
   parent.appendChild(proverbWrapper);
 
   return parent;
+}
+
+/**
+ * Handle submit proverb request states
+ * @returns tuple `[error, payload]`.
+ * Field with no data returns undefined.
+ */
+async function useSubmitRequest(
+  data: Data
+): Promise<[error: any, payload: {}]> {
+  let err: any, payload: any;
+  try {
+    const rawResponse = await fetch(API, {
+      method: "POST",
+      mode: "cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!rawResponse.ok) {
+      err = await rawResponse.json();
+      payload = undefined;
+    } else {
+      err = undefined;
+      payload = await rawResponse.json();
+    }
+  } catch (error) {
+    err = err?.message;
+    payload = undefined;
+  }
+  return [err, payload];
 }
