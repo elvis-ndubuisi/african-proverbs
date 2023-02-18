@@ -55,9 +55,22 @@ play.addEventListener("click", async () => {
   if (err) {
     console.log("error");
     console.log(err);
+    response!.innerHTML =
+      `<pre class="language-json" tabindex="0"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"The alien took over :alien:"</span><span class="token punctuation">,</span>
+  <span class="token property">"Error"</span><span class="token operator">:</span> <span class="token string">"start by pressing the play button"</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>`.trim();
   } else if (payload) {
     console.log("payload");
     console.log(payload);
+    response!.innerHTML =
+      `<pre class="language-json" tabindex="0"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"no request fasdfsd"</span><span class="token punctuation">,</span>
+  <span class="token property">"howto"</span><span class="token operator">:</span> <span class="token string">"start by pressing the play button"</span><span class="token punctuation">,</span>
+  <span class="token property">"view"</span><span class="token operator">:</span> <span class="token string">"api response will display here"</span>
+<span class="token punctuation">}</span>
+</code></pre>`.trim();
   }
   play.classList.replace("hidden", "grid");
   document.getElementById("fetch-status")?.classList.add("hidden");
