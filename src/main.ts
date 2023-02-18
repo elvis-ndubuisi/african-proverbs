@@ -7,7 +7,7 @@ const apiHeader = document.querySelectorAll("#api-header");
 
 /**
  * Listen for events and copy to clipboard.
- * A delay of 2 seconds is initiated before next clip event will occur
+ * A delay of 2 seconds is initiated before next click event will occur
  */
 apiHeader.forEach((header) => {
   header.addEventListener("click", function (event: any) {
