@@ -1,5 +1,5 @@
 <div style="height:90px;width:90px;margin:auto;overflow:hidden;border-radius:10px;">
-    <img src="./public/favicon/android-chrome-512x512.png">
+    <img src="./public/favicon/android-chrome-512x512.png" style="width:100%;height:100%;object-fit:cover;"/>
 </div>
 
 ---
@@ -40,4 +40,4 @@ https://africanproverbs.render.com/api/graphql
 
 ## Admin Page
 
-The African Proverbs API has an admin-only web app for registered users who contributes to the proverbs' codebase. To join the admin group you can [register on the admin web app]('https://africanproverbs-admin.vercel.app/') an verify your account.
+The African Proverbs API has an admin-only web app for registered users who contributes to the proverbs' codebase. To join the admin group you can [register on the admin web app]('https://africanproverbs-admin.vercel.app/auth/register') an verify your account.

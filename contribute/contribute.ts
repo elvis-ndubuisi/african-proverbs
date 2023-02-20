@@ -16,15 +16,6 @@ type Data = {
   postOnTwitter?: boolean;
 };
 
-// {
-//   "name": "name",
-//   "country": "country",
-//   "proverb": "provdsferbdsf23",
-//   "interpretation": "interpretation",
-//   "translations": [{"dialect":"teso", "proverb":"teso proverb"}, {"dialect": "teso 2", "proverb": "teso2"}],
-//   "twitterHandle":"lloosdaif"
-// }
-
 theme();
 
 const submitProverbButton = document.getElementById(
@@ -53,8 +44,6 @@ contributeForm?.addEventListener("submit", async (event) => {
   let country = contributeForm.elements["country"].value;
   let twitterhandle = contributeForm.elements["twitterhandle"].value;
   let acceptTweet = contributeForm.elements["accept"].checked;
-
-  // TODO: handle max translations of 4
 
   if (contributeForm.elements["dialect"]) {
     // Add data object to array if single translation is present
@@ -116,8 +105,9 @@ contributeForm?.addEventListener("submit", async (event) => {
   submitProverbButton.firstElementChild?.classList.replace("inline", "hidden");
 });
 
+// Adds max of 4 fields for translations.
 addDialectButton?.addEventListener("click", function () {
-  if (insertCount !== 5) {
+  if (insertCount !== 4) {
     dialectsDom?.insertBefore(createDialect(), addDialectButton);
     insertCount++;
   }
