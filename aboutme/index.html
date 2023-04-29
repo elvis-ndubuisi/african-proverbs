@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>API Playground - African Proverbs</title>
+    <title>About Ndubuisi Elvis - African Proverbs</title>
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -18,7 +18,7 @@
       gtag("config", "G-5KVLL1NNY0");
     </script>
 
-<!-- Google Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,30 +27,35 @@
     />
 
     <meta charset="UTF-8" />
-    <meta name="theme-color" content="#A3E635">
+    <meta name="theme-color" content="#A3E635" />
     <link rel="stylesheet" href="../src/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Excecute the African Proverbs API endpoints in an interactive environment."
+      content="A little story about me and my journey in Tech."
     />
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta
       name="keywords"
-      content="adages, proverbs, african, african heritage, african proverbs, nigeria, african languates"
+      content="adages, proverbs, african, african heritage, african proverbs, nigeria, african languates, developer, elvis"
     />
+
     <!-- Open Graph -->
-    <meta property="og:title" content="API Playground - African Proverbs" />
+    <meta property="og:title" content="Elvis Profile - African Proverbs" />
     <meta
       property="og:description"
-      content="Excecute the African Proverbs API endpoints in an interactive environment."
+      content="A little story about me and my journey in Tech."
     />
     <meta property="og:image" content="/assets/african-proverbs-social.jpg" />
+
     <!-- Twitter card -->
-    <meta name="twitter:title" content="API Playground - African Proverbs" />
+    <meta
+      name="twitter:title"
+      content="Elvis Personal Profile - African Proverbs"
+    />
     <meta name="twitter:image" content="/assets/african-proverbs-social.jpg" />
     <meta name="twitter:creator" content="@trictthevick" />
-    
+
     <!-- Favicon and Manifest -->
     <link
       rel="apple-touch-icon"
@@ -70,6 +75,7 @@
       href="/favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="/site.webmanifest" />
+
     <!-- Theme script -->
     <script>
       if (
@@ -130,9 +136,8 @@
                 >
                   <path
                     d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"
-                  ></path>
-                </svg>
-              </a>
+                  ></path></svg
+              ></a>
             </li>
             <li
               class="cursor-pointer lg:opacity-80 lg:hover:opacity-100"
@@ -188,105 +193,75 @@
       </div>
     </header>
 
-    <main>
-      <div class="h-[10rem] max-w-7xl mx-auto mb-4 rounded-lg overflow-hidden">
-        <img
-          src="/assets/ian-macharia-NRv8BsouFBQ-unsplash.png"
-          alt="african group"
-          class="h-full w-full object-cover object-top"
-        />
-      </div>
-      <h2 class="text-4xl text-center mb-4 font-medium">API Playground</h2>
-      <div class="max-w-4xl mx-auto p-3 space-y-3">
-        <!-- Playground Header -->
-        <div class="flex items-center justify-between gap-3">
-          <div
-            class="py-2 px-4 rounded text-center bg-stone-900 text-gray-50 dark:bg-black/40 dark:text-white text-sm font-medium"
-            id="request-method"
-          >
-            GET
-          </div>
-
-          <div class="flex-1 inline-block relative">
-            <select
-              class="block appearance-none w-full bg-stone-900 text-gray-50 dark:bg-black/40 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline"
-              id="endpoint-options"
-            >
-              <option value="https://africanproverbs.onrender.com/api/proverb">
-                Random proverb object
-              </option>
-              <option
-                value="https://africanproverbs.onrender.com/api/proverb/filter?filter="
-              >
-                Random proverb using a specific country or language
-              </option>
-              <option
-                value="https://africanproverbs.onrender.com/api/proverb/today"
-              >
-                Proverb of the day
-              </option>
-            </select>
-            <div
-              class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-lime-500"
-            >
-              <svg
-                class="fill-current h-5 w-5"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
-                />
-              </svg>
-            </div>
-          </div>
-
-          <button
-            class="py-2 px-3 rounded text-center uppercase bg-stone-900 text-gray-50 dark:bg-black/40 text-sm font-medium hover:opacity-80 hover:ring hover:ring-lime-500"
-            id="copy-endpoint"
-          >
-            Copy
-          </button>
+    <main class="max-w-5xl mx-auto px-2">
+      <section
+        class="h-80 overflow-hidden flex flex-col-reverse items-center md:grid md:grid-cols-2 gap-3 mb-5"
+      >
+        <div>
+          <h1 class="text-2xl font-bold text-center md:text-left mb-3">
+            About Me 😀
+          </h1>
+          <p>A little story about me.</p>
         </div>
-        <!-- Filter value input -->
-        <input
-          type="text"
-          id="filter-field"
-          class="hidden py-2.5 px-0 w-full text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-lime-500 focus:outline-none focus:ring-0 focus:border-lime-600 peer"
-          placeholder="Filter value -  igbo"
+
+        <img
+          src="/assets/nPan.jpg"
+          alt="elvis ndubuisi"
+          class="rounded-lg overflow-hidden object-cover object-right-top"
         />
-        <!-- Playground Send Button -->
-        <button
-          class="w-14 h-14 grid items-center justify-center border-2 border-stone-900 dark:border-white rounded-full dark:bg-gray-50 bg-stone-900 dark:opacity-80 hover:opacity-100 mx-auto disabled:opacity-10"
-          title="Test API endpoint"
-          id="play"
+      </section>
+      <p class="text-md px-2 md:px-4 leading-5 md:leading-7 my-4">
+        <span class="font-bold text-lg">Hi👋!</span>, My name's
+        <a href="https://elvis.js.cool" class="text-lime-400 underline"
+          >Elvis Ndubuisi</a
+        >. I'm an experienced Software Developer based in Nigeria Africa. I'm of
+        the
+        <a
+          href="https://en.wikipedia.org/wiki/Igbo_people"
+          class="text-green-500"
+          >Igbo ethnicity</a
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="w-11 h-11 fill-white dark:fill-black ml-1"
-          >
-            <path d="M7 6v12l10-6z"></path>
-          </svg>
-        </button>
-        <p
-          class="font-bold capitalize text-lg text-center hidden"
-          id="fetch-status"
+        and speck
+        <a
+          href="https://en.wikipedia.org/wiki/Ika_people"
+          class="text-yellow-500 font-bold"
+          >Ika (Delta)</a
         >
-          Fetching....
-        </p>
-        <!-- Playground Response -->
-        <section
-          class="p-3 rounded min-h-[8rem] bg-stone-900 dark:bg-black/40"
-          id="response"
+        as a native dialect. I love all things tech, art, and games. Currently I
+        spend most of my free time creating little projects like THIS
+      </p>
+
+      <p class="text-md px-2 md:px-4 leading-5 md:leading-7 my-4">
+        I create web softwares using mordern frameworks and libraries like
+        ReactJs, NextJs, TailwindCSS, Scss, Typescript, ExpressJs, Firebase,
+        MongoDB and more.
+      </p>
+
+      <p class="text-md px-2 md:px-4 leading-5 md:leading-7 my-4">
+        2012/2013 was the year I got admission into a new secondary school
+        academy (boarding school) close to my home-town - I just left a Catholic
+        missionary school to register my WAEC exams. This new environment felt
+        intimidating considering the fact that I wasn't raised in my home-town
+        and couldn't speak the native dialect; but the good news was that I
+        understood the native dialect a little.
+      </p>
+
+      <p class="text-md px-2 md:px-4 leading-5 md:leading-7 my-4">
+        Every single day in school felt funny in a way. Most students interacted
+        with the native dialect and each time the physic teacher (Mr. Paul)
+        wanted to advice the class on anything, he would refer to a proverb in
+        our native dialect. Sometimes I find my self laughing if I understood
+        what he said.
+      </p>
+
+      <p class="text-md px-2 md:px-4 leading-5 md:leading-7 my-4">
+        The Africa Proverb API(s) is a side project inspired by
+        <a href="https://api.adviceslip.com/" target="_blank" class="underline"
+          ><b>Tom Kiss' Advice slip API</b></a
         >
-          <pre><code class="language-json"></code>
-            {
-              "language-json":"json"
-            }
-          </pre>
-        </section>
-      </div>
+        and a group of friends who shares there wisdom with me using their
+        native languages.
+      </p>
     </main>
 
     <footer>
@@ -339,9 +314,8 @@
             >
               <path
                 d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
-              ></path>
-            </svg>
-          </a>
+              ></path></svg
+          ></a>
         </div>
 
         <div class="flex items-center justify-center space-x-3 mt-2">
@@ -355,8 +329,6 @@
         </div>
       </div>
     </footer>
-
-    <script src="../playground/playground.ts" type="module"></script>
-    <script src="../src/prism.js" type="module"></script>
+    <script src="./aboutme.ts" type="module"></script>
   </body>
 </html>
