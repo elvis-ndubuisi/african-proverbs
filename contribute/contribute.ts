@@ -2,6 +2,8 @@ import data from "./data.json";
 import { buildDiv, buildInput, buildLabel } from "../src/utils/buildElements";
 import theme from "../src/theme";
 
+declare const gtag: Function;
+
 type Data = {
   name: string;
   country: string;
@@ -31,6 +33,10 @@ var insertCount = 0;
 const API = "https://https://africanproverbs.onrender.com/api/submit";
 
 contributeForm?.addEventListener("submit", async (event) => {
+  gtag("event", "submitted contribution", {
+    time: Date.now(),
+  });
+
   event.preventDefault();
   // Activate form state feedback
   submitProverbButton!.innerText = "Submitting.....";

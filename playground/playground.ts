@@ -1,11 +1,9 @@
 import theme from "../src/theme";
 import clipboard from "../src/utils/clipboard";
 
+declare const gtag: Function;
+
 theme();
-/**
- * TODO: change request method each time endpoint changes.
- * TODO: fix request to backend.
- */
 
 let requestMethod = document.getElementById("request-method");
 let endpointOptions = document.getElementById(
@@ -48,6 +46,9 @@ endpointOptions?.addEventListener("change", (event) => {
 
 // Handle play button
 play.addEventListener("click", async () => {
+  gtag("event", "Tested playground", {
+    time: Date.now(),
+  });
   play.classList.replace("grid", "hidden");
   document.getElementById("fetch-status")?.classList.remove("hidden");
   const [err, payload] = await usePlay(endpoint);
@@ -74,6 +75,9 @@ play.addEventListener("click", async () => {
 
 // Handle copy
 copy?.addEventListener("click", () => {
+  gtag("event", "copied API", {
+    time: Date.now(),
+  });
   clipboard(endpointOptions.value);
   copy!.innerText = "Copied";
   let timer = setTimeout(() => {
