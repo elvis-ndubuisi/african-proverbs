@@ -50,11 +50,8 @@ endpointOptions?.addEventListener("change", (event) => {
 play.addEventListener("click", async () => {
   play.classList.replace("grid", "hidden");
   document.getElementById("fetch-status")?.classList.remove("hidden");
-  console.log(endpoint);
   const [err, payload] = await usePlay(endpoint);
   if (err) {
-    console.log("error");
-    console.log(err);
     response!.innerHTML =
       `<pre class="language-json" tabindex="0"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"The alien took over :alien:"</span><span class="token punctuation">,</span>
@@ -62,43 +59,17 @@ play.addEventListener("click", async () => {
 <span class="token punctuation">}</span>
 </code></pre>`.trim();
   } else if (payload) {
-    console.log("payload");
-    console.log(payload);
     response!.innerHTML =
       `<pre class="language-json" tabindex="0"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"no request fasdfsd"</span><span class="token punctuation">,</span>
-  <span class="token property">"howto"</span><span class="token operator">:</span> <span class="token string">"start by pressing the play button"</span><span class="token punctuation">,</span>
-  <span class="token property">"view"</span><span class="token operator">:</span> <span class="token string">"api response will display here"</span>
+  <span class="token property">"proverb"</span><span class="token operator">:</span> <span class="token string">"${payload?.proverb}"</span><span class="token punctuation">,</span>
+  <span class="token property">"interpretation"</span><span class="token operator">:</span> <span class="token string">"${payload?.interpretation}"</span><span class="token punctuation">,</span>
+  <span class="token property">"native"</span><span class="token operator">:</span> <span class="token string">"${payload?.native}"</span>,
+  <span class="token property">"translation: ${payload?.translations[0]?.dialect}"</span><span class="token operator">:</span> <span class="token string">"${payload?.translations[0]?.proverb}"</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span>
 </code></pre>`.trim();
   }
   play.classList.replace("hidden", "grid");
   document.getElementById("fetch-status")?.classList.add("hidden");
-
-  //   await fetch(endpoint)
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       response!.innerHTML = `
-  //           <pre><code class="language-json">{
-  //   "status": "no request has been performed yet",
-  //   "howto": "start by pressing the play button",
-  //   "view": "api response will display here"
-  // }</code></pre>
-  //   `;
-  //       play.classList.replace("hidden", "grid");
-  //       document.getElementById("fetch-status")?.classList.add("hidden");
-  //     })
-  //     .catch((err) => {
-  //       response!.innerHTML = `
-  //           <pre><code class="language-json">{
-  //   "status": "no request has been performed yet",
-  //   "howto": "start by pressing the play button",
-  //   "view": "api response will display here"
-  // }</code></pre>
-  //   `;
-  //       play.classList.replace("hidden", "grid");
-  //       document.getElementById("fetch-status")?.classList.add("hidden");
-  //     });
 });
 
 // Handle copy
@@ -124,7 +95,7 @@ filterField?.addEventListener("change", (event: any) => {
  */
 async function usePlay(
   endpoint: string
-): Promise<[error: string | {} | undefined, payload: {} | undefined]> {
+): Promise<[error: string | {} | undefined, payload: any | undefined]> {
   let error: any, payload: any;
 
   try {

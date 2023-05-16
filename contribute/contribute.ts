@@ -28,7 +28,7 @@ const addDialectButton = document.getElementById("add-dialect");
 const dialectsDom = document.getElementById("dialects-dom");
 
 var insertCount = 0;
-const API = "http://localhost:4000/api/submit";
+const API = "https://https://africanproverbs.onrender.com/api/submit";
 
 contributeForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -102,6 +102,7 @@ contributeForm?.addEventListener("submit", async (event) => {
   // Deactivate form state feedback
   submitProverbButton!.innerText = "Contribute";
   submitProverbButton.disabled = false;
+  contributeForm.reset();
   submitProverbButton.firstElementChild?.classList.replace("inline", "hidden");
 });
 

@@ -14,6 +14,7 @@ The African Proverb API brings you well-curated and unique proverbs unique to di
 - Typescript 🦖
 - Html 🍨
 - TailwindCSS 🎨
+- Vite 📦
 
 ## **☎️ Contact Me 🌍**
 
