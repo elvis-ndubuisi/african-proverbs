@@ -31,6 +31,7 @@ const dialectsDom = document.getElementById("dialects-dom");
 
 var insertCount = 0;
 const API = "https://https://africanproverbs.onrender.com/api/submit";
+// const API = "http://localhost:4000/api/submit";
 
 contributeForm?.addEventListener("submit", async (event) => {
   gtag("event", "submitted contribution", {
@@ -95,15 +96,29 @@ contributeForm?.addEventListener("submit", async (event) => {
     translations: translations,
   };
 
+  // try {
+  //   const resp = await fetch(
+  //     "https://africanproverbs.onrender.com/api/submit",
+  //     {
+  //       method: "POST",
+  //       body: JSON.stringify({ data: "somei" }),
+  //     }
+  //   );
+  //   const response = await resp.json();
+  //   console.log(response);
+  // } catch (error) {
+  //   console.log("error");
+  //   console.log(error);
+  // }
   // Send to API
   const [error, payload] = await useSubmitRequest(data);
   if (error) {
     console.log("Error");
-    console.log(error);
+    // console.log(error);
   } else {
     // display message.
     console.log("payload");
-    console.log(payload);
+    // console.log(payload);
   }
   // Deactivate form state feedback
   submitProverbButton!.innerText = "Contribute";
@@ -178,15 +193,19 @@ async function useSubmitRequest(
     const rawResponse = await fetch(API, {
       method: "POST",
       mode: "cors",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Set-Cookie": "SameSite=None",
+      },
       body: JSON.stringify(data),
     });
-    if (!rawResponse.ok) {
-      err = await rawResponse.json();
-      payload = undefined;
-    } else {
+    console.log(rawResponse);
+    if (rawResponse.ok) {
       err = undefined;
       payload = await rawResponse.json();
+    } else {
+      payload = undefined;
+      err = await rawResponse.json();
     }
   } catch (error) {
     err = err?.message;
