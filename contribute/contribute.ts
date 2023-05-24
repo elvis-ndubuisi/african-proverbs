@@ -96,12 +96,14 @@ contributeForm?.addEventListener("submit", async (event) => {
     translations: translations,
   };
 
+  console.log(data);
+
   try {
     const resp = await fetch(
       "https://africanproverbs.onrender.com/api/submit",
       {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data }),
       }
     );
     const response = await resp.json();
