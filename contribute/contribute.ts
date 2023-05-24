@@ -103,7 +103,10 @@ contributeForm?.addEventListener("submit", async (event) => {
       "https://africanproverbs.onrender.com/api/submit",
       {
         method: "POST",
-        body: JSON.stringify({ ...data }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       }
     );
     const response = await resp.json();
