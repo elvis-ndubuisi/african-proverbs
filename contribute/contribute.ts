@@ -96,29 +96,19 @@ contributeForm?.addEventListener("submit", async (event) => {
     translations: translations,
   };
 
-  // try {
-  //   const resp = await fetch(
-  //     "https://africanproverbs.onrender.com/api/submit",
-  //     {
-  //       method: "POST",
-  //       body: JSON.stringify({ data: "somei" }),
-  //     }
-  //   );
-  //   const response = await resp.json();
-  //   console.log(response);
-  // } catch (error) {
-  //   console.log("error");
-  //   console.log(error);
-  // }
-  // Send to API
-  const [error, payload] = await useSubmitRequest(data);
-  if (error) {
-    console.log("Error");
-    // console.log(error);
-  } else {
-    // display message.
-    console.log("payload");
-    // console.log(payload);
+  try {
+    const resp = await fetch(
+      "https://africanproverbs.onrender.com/api/submit",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+      }
+    );
+    const response = await resp.json();
+    console.log(response);
+  } catch (error) {
+    console.log("error");
+    console.log(error);
   }
   // Deactivate form state feedback
   submitProverbButton!.innerText = "Contribute";
